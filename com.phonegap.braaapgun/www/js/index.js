@@ -7,9 +7,12 @@ if (!window.DeviceMotionEvent) {
 var t=0,
     min,
     max,
+    max_speed = 8,
+    revert_speed = 6,
     braaap_enabled = true,
     maxelem = document.getElementById("maxelem"),
     minelem = document.getElementById("minelem"),
+    braaaps,
     bars = {
         gamma: document.getElementById("bar-gamma")
     },
@@ -19,10 +22,14 @@ var t=0,
     };
 
 function trans(val) {
-    return Math.min(100, Math.max(0, Math.abs(val)*100/20));
+    return Math.max(0, Math.min(max_speed, val)*100/max_speed);
 }
 
 function bar(barnum, val, checklimits) {
+    if (val < 0) {
+        val = 0;
+    }
+
     if (checklimits) {
         if (val > max) {
             max = val;
@@ -61,10 +68,10 @@ document.addEventListener("deviceready", function() {
         window.addEventListener('devicemotion', function(motionevent) {
             bar("gamma", motionevent.rotationRate.gamma, true);
 
-            if (motionevent.rotationRate.gamma > 9 && braaap_enabled) {
+            if (motionevent.rotationRate.gamma > max_speed && braaap_enabled) {
                 braaap();
                 braaap_enabled = false;
-            } else if (motionevent.rotationRate.gamma <= 5 && braaap_enabled === false) {
+            } else if (motionevent.rotationRate.gamma <= revert_speed && braaap_enabled === false) {
                 braaap_enabled = true;
             }
         }, false);

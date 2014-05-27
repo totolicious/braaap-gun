@@ -49,6 +49,7 @@ html, body {
     width: 100%;
     position: absolute;
     background: red;
+    bottom: 0;
 }
 
 .text {
