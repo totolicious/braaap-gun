@@ -28,3 +28,4 @@ node_modules
 ant-build/
 ant-gen/
 CordovaLib/
+com.phonegap.braaapgun/platforms/android/assets/www

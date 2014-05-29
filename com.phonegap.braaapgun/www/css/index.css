@@ -46,10 +46,24 @@ html, body {
 }
 
 .bar-contents {
-    width: 100%;
+    height: 100%;
     position: absolute;
     background: red;
-    bottom: 0;
+    top: 0;
+}
+
+.no-interface {
+    background: black;
+}
+.no-interface .i-el {
+    display: none;
+}
+
+.gun-left .bar-contents {
+    left: 0;
+}
+.gun-right .bar-contents {
+    right: 0;
 }
 
 .text {
@@ -58,7 +72,7 @@ html, body {
     width: 100%;
     font-size: 50px;
     left: 0;
-    z-index: 2;
+    z-index: 1;
     text-align: center;
 }
 
@@ -75,11 +89,48 @@ html, body {
     bottom: 10px;
 }
 
-#reset {
+.genericBox {
     position: absolute;
     bottom: 10px;
-    right: 10px;
     width: 100px;
     height: 100px;
+    z-index: 3;
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    overflow: hidden;
+    line-height: 100px;
+}
+
+#touchesEl {
+    right: 10px;
+    background: green;
+}
+
+#reset {
+    right: 120px;
     background: blue;
+}
+
+#touchesAvgEl {
+    right: 230px;
+    background: yellow;
+    color: black;
+}
+
+#hand-detector-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+#touchLine {
+    background: black;
+    width: 1px;
+    position: absolute;
+    top: 0;
+    height: 100%;
 }

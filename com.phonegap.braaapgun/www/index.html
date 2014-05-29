@@ -27,10 +27,16 @@
         <title>BraaapGun</title>
     </head>
     <body>
-        <div class="bar"><div class="text" id='text-gamma'></div><div class="bar-contents" id="bar-gamma"></div></div>
-        <div class="text-container" id='maxelem'></div>
-        <div class="text-container" id='minelem'></div>
-        <div id="reset"></div>
+        <div id="hand-detector-container"></div>
+
+        <div class="i-el bar"><div class="text" id='text-gamma'></div><div class="bar-contents" id="bar-gamma"></div></div>
+        <div class="i-el text-container" id='maxelem'></div>
+        <div class="i-el text-container" id='minelem'></div>
+        <div id="reset" class="genericBox"></div>
+        <div id="touchesEl" class="genericBox"></div>
+        <div id="touchesAvgEl" class="genericBox"></div>
+        <div id="touchLine" class="i-el"></div>
+
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
